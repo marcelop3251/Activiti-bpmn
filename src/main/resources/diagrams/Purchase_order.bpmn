@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="purchase_order" name="Pedido de compra" isExecutable="true">
+    <startEvent id="IniciandoTarefa" name="Start"></startEvent>
+    <endEvent id="FinalizandoTarefa" name="FinalizandoTarefa"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="IniciandoTarefa" targetRef="servicetask1"></sequenceFlow>
+    <serviceTask id="servicetask1" name="Processar Pedido" activiti:class="delegates.PurchageOrderProcess"></serviceTask>
+    <callActivity id="billing" name="Cobranca" calledElement="billing_charge"></callActivity>
+    <sequenceFlow id="flow10" sourceRef="billing" targetRef="FinalizandoTarefa"></sequenceFlow>
+    <sequenceFlow id="flow11" sourceRef="servicetask1" targetRef="billing"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_purchase_order">
+    <bpmndi:BPMNPlane bpmnElement="purchase_order" id="BPMNPlane_purchase_order">
+      <bpmndi:BPMNShape bpmnElement="IniciandoTarefa" id="BPMNShape_IniciandoTarefa">
+        <omgdc:Bounds height="35.0" width="35.0" x="91.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="FinalizandoTarefa" id="BPMNShape_FinalizandoTarefa">
+        <omgdc:Bounds height="35.0" width="35.0" x="600.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="servicetask1" id="BPMNShape_servicetask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="210.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="billing" id="BPMNShape_billing">
+        <omgdc:Bounds height="55.0" width="105.0" x="400.0" y="140.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="126.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="210.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="505.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="600.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="315.0" y="167.0"></omgdi:waypoint>
+        <omgdi:waypoint x="400.0" y="167.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
