@@ -1,7 +1,7 @@
 # Activiti-bpmn
 Trabalhando com o Activiti Engine
 
-# Configurando aplicação
+# Configurando a aplicação
 # Banco de dados
 
 Se você tem o docker instalado na sua máquina siga os passos listada na seção de docker para subir a imagem para começar a trabalhar
