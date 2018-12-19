@@ -40,41 +40,4 @@ public class ProcessActiviti {
 		return Response.ok().build();
 	}
 
-	
-	//private static void startProcesss(){
-		//ProcessEngine processEngine = ProcessEngines.getDefaultProcessEngine();
-//		BpmnModel bpmnModel = repositoryService.getBpmnModel("myProcess:2:10004");
-//		ObjectMapper object = new ObjectMapper();
-//		System.out.println(object.writeValueAsString(bpmnModel));
-		
-		
-//		  IdentityService identityService = processEngine.getIdentityService();
-//		  User bbpm = identityService.newUser("bbpm");
-//		  identityService.saveUser(bbpm);
-//		  
-//		  Group group = identityService.newGroup("RegistroDeBoleto");
-//		  group.setName("Boleto");
-//		  identityService.saveGroup(group);
-//		 
-//		 for(HistoricProcessInstance l : list) {
-//			 System.out.println(l.getEndActivityId());
-//		 }
-//		TaskService taskService = processEngine.getTaskService();
-//		List<Task> tasks = taskService.createTaskQuery().taskDefinitionKey(processInstance.getProcessDefinitionKey()).list();
-//		
-//		Task task = taskService.createTaskQuery().singleResult();
-//		
-//		taskService.complete(task.getId());
-		
-//		for(Task task : tasks) {
-//			System.out.println("Task available " + task.getName());
-//			taskService.complete(task.getId());
-//		}
-		
-		
-		
-//	}
-	
-
-
 }
